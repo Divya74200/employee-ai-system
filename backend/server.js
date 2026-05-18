@@ -16,7 +16,13 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://employee-ai-system-frontend-3lh7.onrender.com",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
